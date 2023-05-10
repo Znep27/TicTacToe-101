@@ -7,6 +7,8 @@
     // next to each @TODO you will find tasks that need to be finished
 
 // The variable will change from X to O based on what player turn it is. We need to hold this so we can place an X or O on the board when they're clicked.
+
+
 let currentMarker = 'X'
 
 
@@ -52,6 +54,8 @@ const addMarker = (id) => {
   // .innerHTML 
 
   changeMarker()
+  document.getElementById(id).innerHTML = currentMarker
+  // checkForWin()
 }
 
 
@@ -95,6 +99,7 @@ const resetBoard = () => {
   // const
   
   // loops over the HTML Collection of TDs and clears out the Xs and Os
+  const squares = document.getElementsByTagName("TD")
   for (i=0; i < squares.length; i++) {
 
     // will log out the id of each square as it loops over them.
